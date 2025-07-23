@@ -2,28 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sue Kim | Scientific Illustrator</title>
+
+  <!-- Internal CSS Styles -->
   <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
+    /* --------- Global Reset --------- */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
     }
 
+    /* --------- Base Styles --------- */
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* --------- Header Styles --------- */
     header {
       background-color: #fff;
       padding: 1rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
       border-bottom: 1px solid #ddd;
     }
 
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* --------- Navigation Bar --------- */
     nav {
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
     }
 
     nav a {
@@ -31,39 +50,42 @@
       text-decoration: none;
       color: #444;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: #007acc;
     }
 
-    header h1 {
-      font-size: 2rem;
-      margin: 0.5rem 0 0.2rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #666;
-      margin: 0;
-    }
-
+    /* --------- Main Container --------- */
     main {
-      padding: 2rem;
       max-width: 1000px;
-      margin: 0 auto;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
     }
 
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    /* --------- Gallery Section --------- */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1.5rem;
     }
 
     .gallery-item {
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       overflow: hidden;
       transition: transform 0.2s ease;
     }
@@ -78,45 +100,49 @@
       height: auto;
     }
 
-    .caption {
-      padding: 0.75rem 1rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
+    /* --------- Lightbox Overlay --------- */
     .lightbox {
       display: none;
       position: fixed;
       z-index: 999;
-      padding: 1rem;
       background: rgba(0, 0, 0, 0.85);
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
 
     .lightbox img {
       max-width: 90%;
-      max-height: 90vh;
-      margin-top: 5vh;
+      max-height: 80vh;
       border-radius: 8px;
     }
 
     .lightbox:target {
-      display: block;
+      display: flex;
     }
 
+    /* --------- Contact Section --------- */
+    .contact p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* --------- Footer --------- */
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #aaa;
       padding: 2rem 1rem;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header + Navigation -->
   <header>
     <h1>Sue Kim, PhD</h1>
     <p>Scientific Illustrator | Visualizing Biology, Chemistry, and Medicine</p>
@@ -127,63 +153,65 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
+
+    <!-- About Section -->
     <section id="about">
       <h2>About Me</h2>
       <p>Hello! I'm Sue Kim, a scientific illustrator with a PhD in Biochemistry. I specialize in creating visuals that make complex scientific concepts accessible and engaging. My work bridges art and science, aiming to inform, educate, and inspire.</p>
     </section>
 
+    <!-- Portfolio Gallery -->
     <section id="portfolio">
       <h2>Portfolio</h2>
       <div class="gallery">
+        <!-- Image 1 -->
         <div class="gallery-item">
           <a href="#img1">
-            <img src="images/journalcoverart.jpg" alt="Lung anatomy diagram">
+            <img src="images/journalcoverart.jpg" alt="Lung anatomy diagram" />
           </a>
         </div>
 
+        <!-- Image 2 -->
         <div class="gallery-item">
           <a href="#img2">
-            <img src="images/bou-nader_logo.jpg" alt="Molecular pathway diagram">
+            <img src="images/bou-nader_logo.jpg" alt="Molecular pathway diagram" />
           </a>
         </div>
 
+        <!-- Image 3 -->
         <div class="gallery-item">
           <a href="#img3">
-            <img src="images/chandler_logo.jpg" alt="Neuronal cell structure">
+            <img src="images/chandler_logo.jpg" alt="Neuronal cell structure" />
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Lightbox sections -->
+    <!-- Lightbox Enlarged Images -->
     <div id="img1" class="lightbox">
-      <a href="#portfolio">
-        <img src="images/journalcoverart.jpg" alt="Lung anatomy diagram">
-      </a>
+      <a href="#portfolio"><img src="images/journalcoverart.jpg" alt="Lung anatomy diagram" /></a>
     </div>
-
     <div id="img2" class="lightbox">
-      <a href="#portfolio">
-        <img src="images/bou-nader_logo.jpg" alt="Molecular pathway diagram">
-      </a>
+      <a href="#portfolio"><img src="images/bou-nader_logo.jpg" alt="Molecular pathway diagram" /></a>
     </div>
-
     <div id="img3" class="lightbox">
-      <a href="#portfolio">
-        <img src="images/chandler_logo.jpg" alt="Neuronal cell structure">
-      </a>
+      <a href="#portfolio"><img src="images/chandler_logo.jpg" alt="Neuronal cell structure" /></a>
     </div>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact</h2>
       <p>If you'd like to work together or have any questions, feel free to reach out via email:</p>
       <p><strong>Email:</strong> sue.kim@email.com</p>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Sue Kim | Portfolio created with HTML/CSS
+    &copy; 2025 Sue Kim | Portfolio created with HTML & CSS
   </footer>
 </body>
 </html>
