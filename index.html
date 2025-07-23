@@ -84,36 +84,36 @@
       color: #555;
     }
 
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.85);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      margin-top: 5vh;
+      border-radius: 8px;
+    }
+
+    .lightbox:target {
+      display: block;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #aaa;
       padding: 2rem 1rem;
     }
-
-    .lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.85);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90vh;
-  margin-top: 5vh;
-  border-radius: 8px;
-}
-
-.lightbox:target {
-  display: block;
-}
   </style>
 </head>
 <body>
@@ -135,32 +135,48 @@
 
     <section id="portfolio">
       <h2>Portfolio</h2>
-      <div class="gallery-item">
-        <a href="#img1">
-          <img src="images/journalcoverart.jpg" alt="Journal Cover Art">
-        </a>
-        <div class="caption">Lung anatomy for public health communication</div>
-      </div>
-
-      <!-- Lightbox viewer -->
-      <div id="img1" class="lightbox">
-        <a href="#">
-          <img src="images/example1.jpg" alt="Lung anatomy diagram">
-        </a>
-      </div>
-
+      <div class="gallery">
+        <div class="gallery-item">
+          <a href="#img1">
+            <img src="images/journalcoverart.jpg" alt="Lung anatomy diagram">
+          </a>
+          <div class="caption">Lung anatomy for public health communication</div>
+        </div>
 
         <div class="gallery-item">
-          <img src="images/example2.jpg" alt="Molecular pathway diagram">
+          <a href="#img2">
+            <img src="images/example2.jpg" alt="Molecular pathway diagram">
+          </a>
           <div class="caption">Metabolic pathway involved in oxidative stress</div>
         </div>
 
         <div class="gallery-item">
-          <img src="images/example3.jpg" alt="Neuronal cell structure">
+          <a href="#img3">
+            <img src="images/example3.jpg" alt="Neuronal cell structure">
+          </a>
           <div class="caption">Illustration of neuronal cell and signaling pathways</div>
         </div>
       </div>
     </section>
+
+    <!-- Lightbox sections -->
+    <div id="img1" class="lightbox">
+      <a href="#portfolio">
+        <img src="images/journalcoverart.jpg" alt="Lung anatomy diagram">
+      </a>
+    </div>
+
+    <div id="img2" class="lightbox">
+      <a href="#portfolio">
+        <img src="images/example2.jpg" alt="Molecular pathway diagram">
+      </a>
+    </div>
+
+    <div id="img3" class="lightbox">
+      <a href="#portfolio">
+        <img src="images/example3.jpg" alt="Neuronal cell structure">
+      </a>
+    </div>
 
     <section id="contact">
       <h2>Contact</h2>
