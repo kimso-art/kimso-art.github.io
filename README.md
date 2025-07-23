@@ -1,1 +1,1 @@
-# kimso.github.io
+# kimso-studio.github.io
