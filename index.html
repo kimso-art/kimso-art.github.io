@@ -88,9 +88,15 @@
     }
 
     /* Mobile Responsive: 1 column on smaller screens */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .gallery {
-        column-count: 1;
+        column-count: 2; /* For tablets and medium screens */
+      }
+    }
+
+        @media (max-width: 600px) {
+      .gallery {
+        column-count: 1; /* For phones and small screens */
       }
     }
 
