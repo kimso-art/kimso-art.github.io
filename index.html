@@ -90,13 +90,18 @@
     transition: transform 0.3s ease;
     }
 
+  .gallery-item {
+    break-inside: avoid; /* Prevent column breaks inside items */
+    margin-bottom: 1rem; /* Adds vertical space between items */
+    }
+    
     /* Mobile Responsive: 1 column on smaller screens */
     @media (max-width: 1024px) {
       .gallery {
         column-count: 2; /* For tablets and medium screens */
       }
       .gallery-item {
-        margin-bottom: 1.5rem; /* Adds vertical spacing between stacked images */
+        margin-bottom: 1rem; /* Adds vertical spacing between stacked images */
          }
        }
 
@@ -106,7 +111,7 @@
           }
 
           .gallery-item {
-            margin-bottom: 1.5rem; /* Adds vertical spacing between stacked images */
+            margin-bottom: 1rem; /* Adds vertical spacing between stacked images */
             }
           }
 
