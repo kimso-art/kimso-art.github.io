@@ -81,10 +81,13 @@
     column-gap: 1.5rem;
     }
 
-  .gallery-item {
-    display: inline-block;
+  .gallery-item img {
     width: 100%;
-    margin-bottom: 1.5rem;
+    display: block;
+    height: auto;
+    border-radius: 12px; /* Adds soft rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Optional: subtle shadow like Dribbble */
+    transition: transform 0.3s ease;
     }
 
     /* Mobile Responsive: 1 column on smaller screens */
